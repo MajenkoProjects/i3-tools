@@ -1,0 +1,19 @@
+#!/bin/bash
+
+ACTION="$1"
+WORKSPACE="$2"
+
+SCREEN=$(i3-get-mouse-screen)
+
+SUFFIX="-${SCREEN}"
+TARGET="${SCREEN}:${WORKSPACE}"
+
+if [[ "$ACTION" == "move" ]];
+then
+    i3-msg "move container to workspace ${TARGET}"
+    i3-msg "workspace ${TARGET}"
+    i3-msg "move workspace to ${SCREEN}"
+else
+    i3-msg "workspace ${TARGET}"
+    i3-msg "move workspace to ${SCREEN}"
+fi
