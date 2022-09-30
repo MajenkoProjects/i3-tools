@@ -6,7 +6,7 @@ WORKSPACE="$2"
 SCREEN=$(i3-get-mouse-screen)
 
 SUFFIX="-${SCREEN}"
-TARGET="${SCREEN}:${WORKSPACE}"
+TARGET="${WORKSPACE}:${SCREEN}"
 
 if [[ "$ACTION" == "move" ]];
 then
